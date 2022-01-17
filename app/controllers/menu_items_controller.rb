@@ -15,7 +15,11 @@ class MenuItemsController < ApplicationController
             restaurant_name: params[:restaurant_name],
             menu_description: params[:menu_description]
         )
-        render json: @menuItem
+        if @menuItem.save
+            render json: {message: "Entry created successfully"}, status: 200
+        else
+            render json: {message: "Entry creation failed!"}, status: 400
+        end
     end
 
     def update
@@ -25,7 +29,11 @@ class MenuItemsController < ApplicationController
             restaurant_name: params[:restaurant_name],
             menu_description: params[:menu_description]
         )
-        render json: @menuItem
+        if @menuItem.save
+            render json: {message: "Entry created successfully"}, status: 200
+        else
+            render json: {message: "Entry creation failed!"}, status: 400
+        end
     end
 
     def destroy
