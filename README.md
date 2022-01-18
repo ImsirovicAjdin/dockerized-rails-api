@@ -58,3 +58,4 @@ rails c
 The above command will open a Rails console so you can have a look at the database entries (there are none to begin with, but you can add your own through `rails c`).
 
 Happy coding!
+
